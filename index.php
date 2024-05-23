@@ -1,12 +1,12 @@
 <!-- Comentei essa parte do código por não ter o banco de dados criado -->
-<!-- <?php
-        // require_once('database/conn.php');
-        // $tasks = [];
-        // $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
-        // if ($sql->rowCount() > 0) {
-        // $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
-        // }
-        ?> -->
+<?php
+         require_once('database/conn.php');
+         $tasks = [];
+         $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
+         if ($sql->rowCount() > 0) {
+         $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
+         }
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -41,8 +41,8 @@
 
         <div id="tasks">
             <!-- Comentei essa parte do código por não ter o banco de dados criado -->
-            <!-- <?php foreach ($tasks as $task) : ?> -->
-            <div class="task" data-animate="main">
+            <?php foreach ($tasks as $task) : ?>
+            <div class="task" data-animate="tarefa">
                 <input type="checkbox" name="progress" class="progress <?= $task['completed'] ? 'done' : '' ?>" data-task-id="<?= $task['id'] ?>" <?= $task['completed'] ? 'checked' : '' ?>>
 
                 <p class="task-description">
@@ -68,7 +68,7 @@
                 </form>
             </div>
             <!-- Comentei essa parte do código por não ter o banco de dados criado -->
-            <!-- <?php endforeach ?> -->
+            <?php endforeach ?>
         </div>
     </div>
     <div class="mode-switch">
