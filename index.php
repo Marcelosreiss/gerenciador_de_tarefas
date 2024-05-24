@@ -1,12 +1,11 @@
-<!-- Comentei essa parte do código por não ter o banco de dados criado -->
-<!-- <?php
-        // require_once('database/conn.php');
-        // $tasks = [];
-        // $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
-        // if ($sql->rowCount() > 0) {
-        // $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
-        // }
-        ?> -->
+  <?php
+         require_once('database/conn.php');
+         $tasks = [];
+         $sql = $pdo->query("SELECT * FROM task ORDER BY id ASC");
+         if ($sql->rowCount() > 0) {
+         $tasks = $sql->fetchAll(PDO::FETCH_ASSOC);
+         }
+        ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 
